@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Músicas do compositor Leonardo Siqueira de Sousa — forró, sertanejo e modão.">
+  <title>Leonardo Siqueira de Sousa — Compositor</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header" role="banner">
+    <h1 class="header__title">Leonardo Siqueira de Sousa</h1>
+    <p class="header__subtitle">Compositor</p>
+  </header>
+
+  <main class="main" role="main">
+    <section class="player" aria-label="Player de áudio">
+      <div class="player__info">
+        <span class="player__track" id="currentTrack" aria-live="polite">Selecione uma música</span>
+        <span class="player__time" id="currentTime" aria-live="polite">0:00 / 0:00</span>
+      </div>
+      <div class="player__progress">
+        <input type="range" id="progressBar" class="player__progress-bar" min="0" max="100" value="0" aria-label="Posição na faixa">
+      </div>
+      <div class="player__controls">
+        <button type="button" id="btnPrev" class="player__btn" aria-label="Faixa anterior">‹</button>
+        <button type="button" id="btnPlay" class="player__btn player__btn--play" aria-label="Reproduzir">▶</button>
+        <button type="button" id="btnNext" class="player__btn" aria-label="Próxima faixa">›</button>
+        <div class="player__volume">
+          <label for="volumeBar" class="visually-hidden">Volume</label>
+          <input type="range" id="volumeBar" class="player__volume-bar" min="0" max="100" value="100" aria-label="Volume">
+        </div>
+      </div>
+      <audio id="audio" preload="metadata" aria-label="Áudio da música"></audio>
+    </section>
+
+    <section class="tracklist" aria-label="Lista de músicas">
+      <h2 class="tracklist__title">Músicas</h2>
+      <ul class="tracklist__list" id="tracklist"></ul>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
