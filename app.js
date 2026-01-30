@@ -155,11 +155,11 @@ function renderizarLista() {
   tracklistEl.innerHTML = "";
   MUSICAS.forEach((m, i) => {
     const li = document.createElement("li");
-    li.className = "tracklist__item";
+    li.className = "tracklist__item rounded-xl overflow-hidden";
     if (i === indiceAtual) li.classList.add("tracklist__item--current");
     const a = document.createElement("a");
     a.href = "#";
-    a.className = "tracklist__link";
+    a.className = "tracklist__link flex items-center gap-3 py-3.5 px-4 sm:py-4 sm:px-5 text-cream/85 no-underline bg-stone-900/60 border border-white/10 rounded-xl hover:bg-stone-800/80 hover:text-cream hover:border-amber-500/20 focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2 focus:ring-offset-stone-900 transition";
     a.textContent = m.title;
     a.setAttribute("data-index", i);
     a.addEventListener("click", (e) => {
